@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>KenJhi Fast Food</title>
+<meta name="description" content="KenJhi Fast Food — Pedidos por WhatsApp. Hamburguesas, Pizzas, Tacos, Burritos y más."/>
+<meta name="theme-color" content="#1a0a2e"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="KenJhi"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="application-name" content="KenJhi"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="KenJhi Fast Food"/>
+<meta property="og:description" content="Hamburguesas, Pizzas, Tacos y más — Pedidos por WhatsApp"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-top">
+    <div class="logo-wrap">
+      <img class="logo" src="logo.jpeg" alt="KenJhi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="logo-fallback" style="display:none">KJ</div>
+    </div>
+    <div class="hdr-info">
+      <div class="hdr-name">KenJhi Fast Food</div>
+      <div class="hdr-sub">📍 Miércoles a Domingo · 19hs a 23:30hs</div>
+    </div>
+    <span class="hdr-badge">● Abierto</span>
+    <button class="cart-btn" onclick="openCart()" aria-label="Ver carrito">
+      🛒 <span id="hdr-count">0</span>
+      <div class="cart-badge" id="hdr-badge">$0</div>
+    </button>
+  </div>
+  <div class="tabs-wrap"><div class="tabs" id="tabs"></div></div>
+</header>
+
+<main class="main" id="main"></main>
+
+<div class="cart-bar" id="cart-bar">
+  <div class="bar-info">
+    <span class="bar-count" id="bar-count">0 artículos</span>
+    <span class="bar-total" id="bar-total">$0</span>
+  </div>
+  <button class="bar-btn" onclick="openCart()">Ver carrito →</button>
+</div>
+
+<!-- PRODUCT DETAIL -->
+<div class="overlay" id="pd-ov" onclick="closePD(event)" role="dialog" aria-modal="true">
+  <div class="sheet" id="pd-sheet" onclick="event.stopPropagation()">
+    <div class="s-handle"></div>
+    <button class="s-close" onclick="closePDModal()" aria-label="Cerrar">✕</button>
+    <div id="pd-body"></div>
+    <div class="pd-foot" id="pd-foot"></div>
+  </div>
+</div>
+
+<!-- CART / CHECKOUT -->
+<div class="overlay" id="cart-ov" onclick="closeCartOv(event)" role="dialog" aria-modal="true">
+  <div class="sheet" onclick="event.stopPropagation()">
+    <div class="s-handle"></div>
+    <button class="s-close" onclick="closeCartModal()" aria-label="Cerrar">✕</button>
+    <div class="s-inner" id="cart-content"></div>
+  </div>
+</div>
+
+<script src="script.js" charset="utf-8"></script>
+</body>
+</html>
